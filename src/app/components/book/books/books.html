@@ -6,11 +6,15 @@
           <input type="search" class="form-control" placeholder="Find a book" name="query" ng-model="$ctrl.query" ng-change="$ctrl.filterBookList($ctrl.query)">
         </div>
         <div class="book-list">
-          <div ng-repeat="book in $ctrl.books" class="book">
-            <book book="book"></book>
-          </div>
-          <div ng-if="!$ctrl.books.length">
-            <h4>No Result found</h4>
+          <div ng-if="$ctrl.isInitiated">
+            <div ng-if="!$ctrl.isProcessed">
+              <div ng-repeat="book in $ctrl.books" class="book">
+                <book book="book"></book>
+              </div>
+              <div ng-if="!$ctrl.books.length">
+                <h4>No Result found</h4>
+              </div>
+            </div>
           </div>
         </div>
       </div>

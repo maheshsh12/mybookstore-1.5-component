@@ -1,5 +1,7 @@
-function CommonController($state) {
+function CommonController($state,$localStorage) {
   var ctrl = this;
+  var mybooks = $localStorage.mybooks || [];
+  $localStorage.mybooks  = mybooks;
 }
 angular
   .module('common')
