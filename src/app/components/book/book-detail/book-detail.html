@@ -1,0 +1,9 @@
+<div class="col-md-3">
+	<img src="{{::$ctrl.book.volumeInfo.imageLinks.thumbnail}}" alt="{{::$ctrl.book.volumeInfo.title}}"/>
+</div>
+<div class="col-md-9">
+	<h2>{{::$ctrl.book.volumeInfo.title}}</h2>
+	<h3>By {{::$ctrl.book.volumeInfo.publisher}}</h3>
+	<p>{{::$ctrl.book.volumeInfo.description}}</p>
+	<i>{{::$ctrl.book.volumeInfo.pageCount}} Pages</i>
+</div>

@@ -1,0 +1,32 @@
+<section class="main">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 left-bar">
+        <div class="filter-input">
+          <input type="search" class="form-control" placeholder="Find a book" name="query" ng-model="$ctrl.query" ng-change="$ctrl.filterBookList($ctrl.query)">
+        </div>
+        <div class="book-list">
+          <div ng-repeat="book in $ctrl.books" class="book">
+            <book book="book"></book>
+          </div>
+          <div ng-if="!$ctrl.books.length">
+            <h4>No Result found</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div class="wishlist-itms">
+          <h1>My Books({{$ctrl.mybooks.length}})</h1>
+          <div ng-if="$ctrl.mybooks.length">
+            <div class="row wishlist-item" ng-repeat="mybook in $ctrl.mybooks">
+              <book-detail book="mybook"></book-detail>
+            </div>
+          </div>
+          <div ng-if="!$ctrl.mybooks.length">
+            <h4>Wishlist is empty</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

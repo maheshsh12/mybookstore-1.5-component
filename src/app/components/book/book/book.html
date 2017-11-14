@@ -1,0 +1,4 @@
+<h2>{{ ::$ctrl.book.volumeInfo.title}}</h2>
+<h3>By {{::$ctrl.book.volumeInfo.publisher}}</h3>
+<button type="button" ng-if="!$ctrl.isAdded($ctrl.book)" class="btn btn-default" ng-click="$ctrl.addToWishlist($ctrl.book)">Add</button>
+<button type="button" ng-if="$ctrl.isAdded($ctrl.book)" class="btn btn-default" disabled >Added</button>
